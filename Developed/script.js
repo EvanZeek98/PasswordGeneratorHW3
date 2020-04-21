@@ -1,14 +1,17 @@
-// Assignment Code
-var generateBtn = document.querySelector("#generate");
+const characterAmountRange = document.getElementById("characterAmountRange")
+const characterAmountNumber = document.getElementById("characterAmountNumber")
+const form = document.getElementById("passwordGeneratorForm")
 
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+characterAmountNumber.addEventListener("input", syncCharacterAmount)
+characterAmountRange.addEventListener("input", syncCharacterAmount)
 
-  passwordText.value = password;
+form.addEventListener("submit", e => {
+    e.preventdefault()
+})
 
+function syncCharacterAmount(e) {
+    const value = e.target.value
+    characterAmountNumber.value = value
+    characterAmountRange.value = value
 }
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
