@@ -137,7 +137,7 @@ function createPassword(passwordAmount, lowers, uppers, numbers, symbols) {
     //creating a for loop and initializing math.random to go as long as set length, pushing the that set of characters and returning them as strings for the array
     for (let i = 0; i < passwordAmount; i++) {
         const randomPassword = passwordValue[Math.floor(Math.random() * passwordValue.length)];
-        passwordCharacters.push(String.fromCharCode(randomPassword))
+        passwordCharacters.push(randomPassword)
     };
     // returning the stringified values and storing them into the array
     return passwordCharacters.join("");
